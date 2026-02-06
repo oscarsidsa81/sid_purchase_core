@@ -24,7 +24,6 @@
                 <field name="sid_sale_date" optional="hide"/>
                 <field name="sid_unit_weight_po_line" optional="hide"/>
                 <field name="sid_weight_subtotal" optional="show"/>
-                <field name="sid_po_line_delay" optional="show"/>
                 <field name="sid_unit_price_difference" optional="hide"/>
             </xpath>
 
