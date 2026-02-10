@@ -16,7 +16,6 @@
     ],
     "data": [
         "views/purchase_order_basic.xml",
-        "views/purchase_order_line_basic.xml"
     ],
     "installable": True,
     "application": False,
