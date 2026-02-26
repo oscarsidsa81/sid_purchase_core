@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "SIDSA - Purchase Core Fields",
+    "name": "sid_purchase_core",
     "version": "15.0.1.0.0",
     "category": "Purchases",
-    "summary": "Campos core en pedidos de compra y lÃ­neas (HS, pendientes, pesos, bases, etc.).",
-    "author": "SIDSA / Custom",
+    "summary": "Campos core en pedidos de compra y líneas (HS, pendientes, pesos, bases, etc.).",
+    "author": "oscarsidsa81",
     "license": "LGPL-3",
     "depends": [
         "purchase",
