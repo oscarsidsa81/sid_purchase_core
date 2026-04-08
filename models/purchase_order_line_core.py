@@ -14,10 +14,12 @@ class PurchaseOrderLine(models.Model):
         help="z.HS Code",
     )
 
-    # Copia almacenada del HS code para la lÃ­nea
+    # Copia almacenada del HS code para la línea (independiente del producto)
     sid_hs_code_po_line = fields.Char(
         string="HS Code (po)",
-        related="sid_hs_code",
+        compute="_compute_sid_hs_code_po_line",
+        inverse="_inverse_sid_hs_code_po_line",
+        copy=True,
         store=True,
         readonly=False,
         help="HS Code",
@@ -98,6 +100,21 @@ class PurchaseOrderLine(models.Model):
         store=True,
         readonly=True,
     )
+
+    @api.depends("product_id", "product_id.hs_code")
+    def _compute_sid_hs_code_po_line(self):
+        for line in self:
+            if not line.sid_hs_code_po_line:
+                line.sid_hs_code_po_line = line.product_id.hs_code or False
+
+    def _inverse_sid_hs_code_po_line(self):
+        # Campo editable en línea: no debe escribir de vuelta al producto.
+        return
+
+    @api.onchange("product_id")
+    def _onchange_product_id_set_sid_hs_code_po_line(self):
+        for line in self:
+            line.sid_hs_code_po_line = line.product_id.hs_code or False
 
     @api.depends("qty_to_invoice", "qty_received", "product_qty", "qty_invoiced")
     def _compute_sid_invoice(self):
