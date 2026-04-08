@@ -30,15 +30,6 @@ class PurchaseOrder(models.Model):
         help="Suma de (qty_to_invoice * price_unit) de las líneas.",
     )
 
-    sid_regularizado = fields.Boolean(
-        string="Regularizado sin Factura",
-        default=False,
-        help=(
-            "Regularizado sin factura. Se utiliza cuando el proveedor no envía una factura "
-            "para completar el pedido. Permite el uso del botón 'Revisar Facturación' en líneas de compra."
-        ),
-    )
-
     amount_untaxed_total = fields.Monetary(
         string="Base facturada",
         currency_field="currency_id",
