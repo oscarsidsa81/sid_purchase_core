@@ -46,17 +46,6 @@ class PurchaseOrderLine(models.Model):
         readonly=True,
     )
 
-    pending_line = fields.Selection(
-        selection=[
-            ("true", "Si"),
-            ("false", "No"),
-        ],
-        string="Pendiente",
-        compute="_compute_pending_line",
-        store=True,
-        readonly=True,
-    )
-
     sid_qty_inv_sale = fields.Float(
         string="Cantidad Facturada Venta",
         related="sale_line_id.qty_invoiced",
@@ -132,13 +121,6 @@ class PurchaseOrderLine(models.Model):
                 line.sid_invoice = "facturado"
             else:
                 line.sid_invoice = "pendiente"
-
-    @api.depends("product_qty", "qty_received")
-    def _compute_pending_line(self):
-        for line in self:
-            product_qty = round(line.product_qty or 0.0, 2)
-            qty_received = round(line.qty_received or 0.0, 2)
-            line.pending_line = "true" if product_qty > qty_received else "false"
 
     @api.depends("qty_received", "product_qty", "sid_unit_weight_po_line")
     def _compute_sid_weight_subtotal(self):

@@ -10,7 +10,6 @@ Incluye (entre otros):
 
 - HS code (`sid_hs_code`, `sid_hs_code_po_line`)
 - estados y cómputos de facturación (`sid_invoice`)
-- línea pendiente (`pending_line`)
 - pesos (`sid_unit_weight_po_line`, `sid_weight_subtotal`)
 - bases (`amount_untaxed_pending`, `amount_untaxed_total`)
 - fecha de recepción en texto (`sid_date_planned`)

@@ -18,7 +18,6 @@
             <xpath expr="//field[@name='order_line']/tree" position="inside">
                 <field name="sid_hs_code_po_line" optional="show"/>
                 <field name="sid_invoice" optional="show"/>
-                <field name="pending_line" optional="show"/>
                 <field name="supplier_country" optional="hide"/>
                 <field name="sid_qty_inv_sale" optional="hide"/>
                 <field name="sid_sale_date" optional="hide"/>
