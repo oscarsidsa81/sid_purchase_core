@@ -27,9 +27,7 @@ Incluye vistas básicas no-OV:
 - `delivery`
 - `oct_fecha_contrato_compras`
 - `oct_fecha_contrato_ventas`
-- `sid_sale_line_custom_fields` (para el related con venta)
 
 ## Relación con otros módulos
 
-- `sid_purchase_delay_sync`: cálculo de retraso por línea y sincronización del flag en venta.
 - `sid_purchase_extra_fields`: módulo paraguas/meta para compatibilidad de dependencias.

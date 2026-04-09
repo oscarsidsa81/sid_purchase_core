@@ -12,7 +12,6 @@
         "delivery",
         "oct_fecha_contrato_compras",
         "oct_fecha_contrato_ventas",
-        "sid_sale_line_custom_fields"
     ],
     "data": [
         "views/purchase_order_basic.xml",
