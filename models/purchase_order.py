@@ -6,7 +6,7 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     sid_date_planned = fields.Char(
-        string="Fecha de recepción",
+        string="Fecha de próxima recepción",
         compute="_compute_sid_date_planned",
         store=True,
         readonly=True,

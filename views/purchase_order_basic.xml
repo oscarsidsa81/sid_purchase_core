@@ -13,7 +13,6 @@
                     <field name="amount_untaxed_total" readonly="1" groups="account.group_account_manager"/>
                 </group>
             </xpath>
-
             <!-- Añadir columnas a la lista de líneas dentro del pedido -->
             <xpath expr="//field[@name='order_line']/tree" position="inside">
                 <field name="sid_hs_code_po_line" optional="show"/>
@@ -26,10 +25,6 @@
                 <field name="sid_unit_price_difference" optional="hide"/>
             </xpath>
 
-            <!-- Líneas: permitir wrap en la descripción (name) -->
-            <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="attributes">
-                <attribute name="class">sid_wrap_2lines</attribute>
-            </xpath>
         </field>
     </record>
 </odoo>
