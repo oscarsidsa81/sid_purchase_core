@@ -9,6 +9,7 @@
     "depends": [
         "purchase",
         "sale_management",
+        "sale_purchase",
         "delivery",
         "oct_fecha_contrato_compras",
         "oct_fecha_contrato_ventas",
