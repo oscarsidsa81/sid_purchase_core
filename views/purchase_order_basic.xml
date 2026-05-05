@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
             <!-- Insertar campos del pedido en la pestaña "Other Information" -->
-            <xpath expr="//sheet//group" position="inside">
+            <xpath expr="//page[@name='purchase_delivery_invoice']" position="inside">
                 <group string="Contabilidad" col="4" groups="account.group_account_manager">
                     <field name="amount_untaxed_pending" readonly="1" groups="account.group_account_manager"/>
                     <field name="amount_untaxed_total" readonly="1" groups="account.group_account_manager"/>
